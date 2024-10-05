@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #f0e4d7;
+  color: #3a2723;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  font-size: clamp(2em, 6vw, 3em);
+  text-align: center;
+  margin-bottom: 30px;
+  color: #5d4037;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.playerContainer {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+input[type='text'] {
+  padding: 12px;
+  margin: 8px;
+  border: 2px solid #8d6e63;
+  border-radius: 8px;
+  width: calc(50% - 16px);
+  max-width: 200px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #795548;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #5d4037;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  background-color: #8d6e63;
+  padding: 15px;
+  border-radius: 15px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.boardCell {
+  aspect-ratio: 1 / 1;
+  background-color: #f0e4d7;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.5em, 12vw, 4em);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.boardCell:hover {
+  background-color: #e0d0c1;
+  transform: scale(1.05);
+}
+
+.players {
+  margin-top: 20px;
+  font-weight: bold;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+#player1 {
+  color: #3e2723;
+}
+
+#player2 {
+  color: #5d4037;
+}
+
+#turnIndicator {
+  font-size: 1.3em;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #795548;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .gameBoard {
+    gap: 10px;
+  }
+
+  input[type='text'] {
+    width: calc(100% - 16px);
+    max-width: none;
+  }
+}
