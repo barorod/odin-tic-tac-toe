@@ -126,7 +126,7 @@ const GameController = (() => {
           alert(
             `${
               currentPlayer.name
-            } wins the game!\n\t${GameBoard.getBoard()[0].join(
+            } wins the game!\n${GameBoard.getBoard()[0].join(
               ' | '
             )}\n${GameBoard.getBoard()[1].join(
               ' | '
@@ -136,7 +136,7 @@ const GameController = (() => {
           isGameOver = true;
         } else if (GameBoard.isBoardFull()) {
           alert(
-            `It's a draw!\n\t${GameBoard.getBoard()[0].join(
+            `It's a draw!\n${GameBoard.getBoard()[0].join(
               ' | '
             )}\n${GameBoard.getBoard()[1].join(
               ' | '
@@ -149,7 +149,7 @@ const GameController = (() => {
           alert(
             `Now it's ${
               currentPlayer.name
-            }'s turn.\n\t${GameBoard.getBoard()[0].join(
+            }'s turn.\n${GameBoard.getBoard()[0].join(
               ' | '
             )}\n${GameBoard.getBoard()[1].join(
               ' | '
