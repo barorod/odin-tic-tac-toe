@@ -1,4 +1,4 @@
-// alert('In Progress');
+alert('Still In Progress. See the terminal for the results');
 
 const GameBoard = (() => {
   //   const boardArray = [
@@ -18,7 +18,7 @@ const GameBoard = (() => {
   const isCellEmpty = (row, col) => boardArray[row][col] === '';
 
   const isBoardFull = () =>
-    boardArray.every((row) => row.every((cell) => cell !== ''));
+    !boardArray.some((row) => row.some((cell) => cell === ''));
 
   return { getBoard, setBoardCellValue, isCellEmpty, isBoardFull };
 })();
@@ -134,7 +134,14 @@ const GameController = (() => {
         } else {
           switchPlayer();
           console.log(`Now it's ${currentPlayer.name}'s turn.`);
-          console.log(GameBoard.getBoard());
+          //   console.log(GameBoard.getBoard());
+          console.log(
+            `${GameBoard.getBoard()[0].join(
+              ' | '
+            )}\n${GameBoard.getBoard()[1].join(
+              ' | '
+            )}\n${GameBoard.getBoard()[2].join(' | ')}`
+          );
         }
       } else {
         console.log('Cell is already occupied. Choose a different cell.');
@@ -144,3 +151,5 @@ const GameController = (() => {
 
   return { startGame };
 })();
+
+GameController.startGame();
