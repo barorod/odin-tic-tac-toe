@@ -1,4 +1,4 @@
-alert('Still In Progress. See the terminal for the results');
+alert('Still In Progress. An alert/prompt will be use for interactivity.');
 
 const GameBoard = (() => {
   //   const boardArray = [
