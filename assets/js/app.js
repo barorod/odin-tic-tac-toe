@@ -2,9 +2,9 @@ alert('Still In Progress. See the terminal for the results');
 
 const GameBoard = (() => {
   //   const boardArray = [
-  //     ['X', 'X', 'X'],
-  //     ['', '', ''],
-  //     ['', '', ''],
+  //     ['', 'O', 'X'],
+  //     ['O', 'X', 'O'],
+  //     ['O', 'X', 'O'],
   //   ];
 
   const boardArray = Array.from({ length: 3 }, () => Array(3).fill(''));
@@ -47,8 +47,7 @@ const GameController = (() => {
     const player2Input = prompt('Enter Player 2 Name').trim();
     playerOne.name = player1Input || 'Player 1';
     playerTwo.name = player2Input || 'Player 2';
-    console.log(`Player 1: ${playerOne.name} (X)`);
-    console.log(`Player 2: ${playerTwo.name} (O)`);
+    alert(`Player 1: ${playerOne.name} (X)\nPlayer 2: ${playerTwo.name} (O)`);
     playTurn();
   };
 
@@ -124,27 +123,42 @@ const GameController = (() => {
         GameBoard.setBoardCellValue(rowInput, colInput, currentPlayer.mark);
 
         if (checkWinner(GameBoard.getBoard())) {
-          console.log(`${currentPlayer.name} wins the game!`);
-          console.log(GameBoard.getBoard());
-          isGameOver = true;
-        } else if (GameBoard.isBoardFull()) {
-          console.log("It's a draw!");
-          console.log(GameBoard.getBoard());
-          isGameOver = true;
-        } else {
-          switchPlayer();
-          console.log(`Now it's ${currentPlayer.name}'s turn.`);
-          //   console.log(GameBoard.getBoard());
-          console.log(
-            `${GameBoard.getBoard()[0].join(
+          alert(
+            `${
+              currentPlayer.name
+            } wins the game!\n\t${GameBoard.getBoard()[0].join(
               ' | '
             )}\n${GameBoard.getBoard()[1].join(
               ' | '
             )}\n${GameBoard.getBoard()[2].join(' | ')}`
           );
+          //   console.log(GameBoard.getBoard());
+          isGameOver = true;
+        } else if (GameBoard.isBoardFull()) {
+          alert(
+            `It's a draw!\n\t${GameBoard.getBoard()[0].join(
+              ' | '
+            )}\n${GameBoard.getBoard()[1].join(
+              ' | '
+            )}\n${GameBoard.getBoard()[2].join(' | ')}`
+          );
+          //   console.log(GameBoard.getBoard());
+          isGameOver = true;
+        } else {
+          switchPlayer();
+          alert(
+            `Now it's ${
+              currentPlayer.name
+            }'s turn.\n\t${GameBoard.getBoard()[0].join(
+              ' | '
+            )}\n${GameBoard.getBoard()[1].join(
+              ' | '
+            )}\n${GameBoard.getBoard()[2].join(' | ')}`
+          );
+          //   console.log(GameBoard.getBoard());
         }
       } else {
-        console.log('Cell is already occupied. Choose a different cell.');
+        alert('Cell is already occupied. Choose a different cell.');
       }
     }
   };
