@@ -114,10 +114,10 @@ const GameController = (() => {
   const playTurn = () => {
     while (!isGameOver) {
       let rowInput = parseInt(
-        prompt('${currentPlayer.name}, enter row (0, 1, 2): ').trim()
+        prompt(`${currentPlayer.name}, enter row (0, 1, 2): `).trim()
       );
       let colInput = parseInt(
-        prompt('${currentPlayer.name}, enter col (0, 1, 2): ').trim()
+        prompt(`${currentPlayer.name}, enter col (0, 1, 2): `).trim()
       );
 
       if (GameBoard.isCellEmpty(rowInput, colInput)) {
