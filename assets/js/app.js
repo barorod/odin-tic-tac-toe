@@ -47,8 +47,8 @@ const GameController = (() => {
     const player2Input = prompt('Enter Player 2 Name').trim();
     playerOne.name = player1Input || 'Player 1';
     playerTwo.name = player2Input || 'Player 2';
-    console.log('Player 1: ${playerOne.name} (X)');
-    console.log('Player 2: ${playerTwo.name} (O)');
+    console.log(`Player 1: ${playerOne.name} (X)`);
+    console.log(`Player 2: ${playerTwo.name} (O)`);
     playTurn();
   };
 
